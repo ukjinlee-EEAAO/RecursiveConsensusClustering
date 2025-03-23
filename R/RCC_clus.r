@@ -1162,7 +1162,7 @@ RCC_clus = function(config_file){
 		dirs = list.dirs(".")
 		dirs = dirs[grepl("RCCs*", dirs)]
 		unlink(dirs, recursive = T)
-		system("rm -r RCC*")
+		system("rm -r RCC*", ignore.stderr = TRUE)
 		maxK = min(10,ceiling(nrow(sample_ids)/10))
 
 		if((nrow(sample_ids) < min_samples)){
@@ -1299,7 +1299,7 @@ RCC_clus = function(config_file){
 	}
 	write.csv(sampleInfo,file= "OutputRCC.csv")
 
-	system("rm -rf RCC*")
+	system("rm -rf RCC*", ignore.stderr = TRUE)
 	system("cat *Var*csv > genesUsed.csv")
-	system("rm -rf lm* *cluster*txt *png *CDF.csv stability* *Var* *mds*")
+	system("rm -rf lm* *cluster*txt *png *CDF.csv stability* *Var* *mds*", ignore.stderr = TRUE)
 }
