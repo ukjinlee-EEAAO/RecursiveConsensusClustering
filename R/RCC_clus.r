@@ -1088,7 +1088,7 @@ CDF_RCC = function(zscore_mat,output_dir,maxK,times,rIN, selected_mat, minGenesP
 			return(Fclus)
 		}
 		matStat = matStat[clus,]
-		Fclus = matStat[,1]
+		Fclus = matStat[1,1] # Return only the first cluster number if multiple are found
 		return(Fclus)
 	}
 }
